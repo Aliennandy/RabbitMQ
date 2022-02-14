@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import pika
 import ssl
-credentials = pika.PlainCredentials('guest', 'guest')
+credentials = pika.PlainCredentials('test', 'administrator')
 context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
 parameters = pika.ConnectionParameters(host='ec2-13-126-58-1.ap-south-1.compute.amazonaws.com',
                                        port=5671,

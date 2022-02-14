@@ -1,0 +1,21 @@
+version: "2.3"
+services:
+   rabbitmq:
+    image: rabbitmq:3.8-management
+    container_name: 'rabbitmq'
+    restart: always
+    ports:
+        - 5672:5672
+        - 15672:15672
+        - 5671:5671
+        - 1883:1883
+        - 8883:8883
+    volumes:
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+        - rabbitmq_go_net
+
+networks:
+  rabbitmq_go_net:
+    driver: bridge

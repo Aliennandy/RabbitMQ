@@ -5,3 +5,8 @@ EXPOSE 1883
 EXPOSE 15675
 EXPOSE 15672
 EXPOSE 5671
+EXPOSE 5672 
+
+networks:
+  rabbitmq_go_net:
+    driver: bridge
