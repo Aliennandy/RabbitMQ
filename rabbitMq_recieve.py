@@ -9,6 +9,9 @@ parameters = pika.ConnectionParameters(host='ec2-13-126-58-1.ap-south-1.compute.
                                        credentials=credentials,
                                        ssl_options=pika.SSLOptions(context)
                                        )
+
+connection = pika.BlockingConnection(parameters)
+
 channel = connection.channel()
 
 channel.exchange_declare(exchange='logs', exchange_type='fanout')
